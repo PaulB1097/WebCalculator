@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Web Calculator</h1>
+    <input type="text" id="firstElement" placeholder="First element" >
+    <input type="text" id="secondElement" placeholder="Second element" >
+    <select id="operation">
+        <option value="Adunare">Adunare</option>
+        <option value="Scadere">Scadere</option>
+        <option value="Inmultire">Inmultire</option>
+        <option value="Impartire">Impartire</option>
+    </select>
+    <button onclick="Calculate()">Calculate</button>
+    <br>
+    <h2>The result is: <span id="result"></span></h1>
+    
+    <script>
+        function Calculate(){
+            let firstElement = document.getElementById("firstElement").value;
+            let secondElement = document.getElementById("secondElement").value;
+            firstElement=parseFloat(firstElement)
+            secondElement=parseFloat(secondElement)
+            let opr=document.getElementById("operation").value
+            switch(opr){
+                case "Adunare":
+                    result=firstElement+secondElement
+                    break
+                    
+                case "Scadere":
+                    result=firstElement-secondElement
+                    break
+                    
+                case "Inmultire":
+                    result=firstElement * secondElement
+                    break
+                    
+                case "Impartire":
+                    result=firstElement / secondElement
+                    break
+                    
+
+            }
+            document.getElementById("result").innerHTML = result
+        }
+    </script>
+</body>
+</html>
